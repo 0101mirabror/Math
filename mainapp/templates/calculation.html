@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load mathfilters %}                                                                                          
+{% block content %}
+<div class="container">
+    <div class="card shadow">
+        <div class="card-body">
+            <table>
+                <tr>
+                  <th>OX</th>
+                  <th>OY</th>
+                  <th>OZ</th>
+                  <th>R</th>
+                </tr>
+                <tr>
+                  <td style="width:18rem;"><b>x1:</b> {{data.x1}}</td>
+                  <td style="width:18rem;"><b>x1:</b> {{data.y1}}</td>
+                  <td style="width:18rem;"><b>z1:</b> {{data.z1}}</td>
+                  <td style="width:18rem;"><b>r1:</b> {{data.r1}}</td>
+                </tr>
+                <tr>
+                    <td style="width:18rem;"><b>x2:</b> {{data.x2}}</td>
+                    <td style="width:18rem;"><b>y2:</b> {{data.y2}}</td>
+                    <td style="width:18rem;"><b>z2:</b> {{data.z2}}</td>
+                    <td style="width:18rem;"><b>r2:</b> {{data.r2}}</td>
+                </tr>
+                <tr>
+                    <td style="width:18rem;"><b>x3:</b> {{data.x3}}</td>
+                    <td style="width:18rem;"><b>y3:</b> {{data.y3}}</td>
+                    <td style="width:18rem;"><b>z3:</b> {{data.z3}}</td>
+                    <td style="width:18rem;"><b>r3:</b> {{data.r3}}</td>
+                </tr>
+              </table>
+        </div>
+      </div>
+    <div class="card shadow">
+        <div class="card-body">
+          <h1>Basic math filters</h1>
+
+<ul>
+    <li>8 + 3 = {{ 8|add:3 }}</li>
+
+    <li>13 - 17 = {{ 13|sub:17 }}</li>
+
+    {% with answer=42 %}
+    <li>42 * 0.5 = {{ answer|mul:0.5 }}</li>
+    {% endwith %}
+
+    {% with numerator=12 denominator=3 %}
+    <li>12 / 3 = {{ numerator|div:denominator }}</li>
+    {% endwith %}
+
+    <li>|-13| = {{ -13|abs }}</li>
+</ul>
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}
