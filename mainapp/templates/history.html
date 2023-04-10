@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load mathfilters %}                                                                                          
+{% block content %}
+<div class="container">
+  
+    <div class="card shadow bg-primary text-white mb-2">
+        <div class="card-body ">
+          <h1>Mathematical Solving Way</h1>
+          <h5>Matematik ishlanish usuli</h5>
+          <img   src="{{img.image.url}}"  height="500" width="400">           
+        </div>
+      </div>
+
+    <div class="card">
+    {% for dat in data %}
+    <div class="card shadow mb-2">
+        <div class="card-body">
+          
+          <table>
+            <tr>
+              <th>OX</th>
+              <th>OY</th>
+              <th>OZ</th>
+              <th>R</th>
+            </tr>
+            <tr>
+              <td style="width:18rem;"><b>x1:</b> {{dat.x1}}</td>
+              <td style="width:18rem;"><b>x1:</b> {{dat.y1}}</td>
+              <td style="width:18rem;"><b>z1:</b> {{dat.z1}}</td>
+              <td style="width:18rem;"><b>r1:</b> {{dat.r1}}</td>
+            </tr>
+            <tr>
+                <td style="width:18rem;"><b>x2:</b> {{dat.x2}}</td>
+                <td style="width:18rem;"><b>y2:</b> {{dat.y2}}</td>
+                <td style="width:18rem;"><b>z2:</b> {{dat.z2}}</td>
+                <td style="width:18rem;"><b>r2:</b> {{dat.r2}}</td>
+            </tr>
+            <tr>
+                <td style="width:18rem;"><b>x3:</b> {{dat.x3}}</td>
+                <td style="width:18rem;"><b>y3:</b> {{dat.y3}}</td>
+                <td style="width:18rem;"><b>z3:</b> {{dat.z3}}</td>
+                <td style="width:18rem;"><b>r3:</b> {{dat.r3}}</td>
+            </tr>
+          </table>
+                <p>
+                    {{ dat.x1 }}
+                </p>
+        </div>
+    </div>
+    {% endfor %} 
+    <a href="{% url 'home' %}" class="btn btn-primary d-right" width="18rem" >Ortga</a>
+  </div>
+
+
+
+</div>
+{% endblock content %}

@@ -16,4 +16,5 @@ class CalcClass():
         self.r2 = r2
         self.r3 = r3
     def formula_fc(self): 
+        
         pass

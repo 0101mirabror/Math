@@ -6,19 +6,36 @@ from django.template import loader
 from django.views.generic import TemplateView
 "Local"
 from mainapp.forms import CalculationResultForm
-from mainapp.models import CalculationResult
+from mainapp.models import CalculationResult, ImageClass
 
+"Static Pages"
 class HomePageView(TemplateView):
-    template_name = "index.html"
+    template_name = "homepage.html"
+class AboutPageView(TemplateView):
+    template_name = "about.html"
+
+
+"Dinamic Pages"
 
 def calculation_method(request):
+
     data = CalculationResult.objects.last()
     context = {
         'data': data
     }
     return render(request, "calculation.html", context)
 
-    
+def get_history(request):
+
+    id = request.user.id
+    dat = ImageClass.objects.get(id=1)
+    data = CalculationResult.objects.filter(user_id=id)
+    context = {
+        'data': data,
+        'img':dat
+    }
+    return render(request, "history.html", context)
+
 
 
 

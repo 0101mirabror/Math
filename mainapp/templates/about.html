@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row bg-info" >
+    
+    <div class=" col card text-white bg-primary mb-3 me-3">
+        <div class="card-header">O'zbekcha</div>
+        <div class="card-body">
+          <h5 class="card-title">Kuzatuv nuqtasi yoki nishonning koordinatalarini aniqlash uchun dasturiy ta'minotni ishlab chiqish</h5>
+          <p class="card-text">Kuzatuv nuqtasi yoki nishonning koordinatalarini aniqlash uchun dasturiy ta'minotni ishlab chiqish bir qator bosqichlarni o'z ichiga oladi, jumladan:
+
+            Talablarni aniqlash: Birinchi qadam, kuzatuv turi, talab qilinadigan aniqlik va foydalaniladigan asboblar yoki jihozlar kabi dasturiy ta'minotga qo'yiladigan talablarni aniqlashdan iborat.
+            
+            Tegishli algoritmni tanlash: Talablar o'rnatilgandan so'ng, koordinatalarni aniqlash uchun tegishli algoritmni tanlash mumkin. Bu kuzatishning o'ziga xos xususiyatlariga qarab triangulyatsiya, trilateratsiya yoki boshqa usullardan foydalanishni o'z ichiga olishi mumkin.
+            
+            Algoritmni amalga oshirish: Tanlangan algoritm odatda Python, C++ yoki MATLAB kabi dasturlash tilidan foydalangan holda dasturiy ta'minotda amalga oshiriladi.
+            
+            Ma'lumotlarni kiritish va chiqarishni birlashtirish: Dasturiy ta'minot foydalanuvchilarga tegishli ma'lumotlarni kiritish va hisoblangan koordinatalarni olish imkonini beruvchi kiritish va chiqarish funksiyalarini ham o'z ichiga olishi kerak.
+            
+            Sinov va tekshirish: So'ngra dasturiy ta'minot aniq natijalar berishi va 1-bosqichda belgilangan talablarga javob berishi uchun sinovdan o'tkaziladi va tasdiqlanadi.
+            
+            Takroriy rivojlanish: Sinov natijalari va foydalanuvchilarning fikr-mulohazalariga qarab, dasturiy ta'minot iterativ rivojlanish davrlari orqali yanada takomillashtirilishi va yangilanishi mumkin.
+            
+            Umuman olganda, kuzatuv nuqtasining koordinatalarini aniqlash uchun dasturiy ta'minotni ishlab chiqish matematik va algoritmik tamoyillarni chuqur tushunishni, shuningdek, dasturlash va dasturiy ta'minotni ishlab chiqish bo'yicha malakani talab qiladi.</p>
+        </div>
+      </div>
+      <div class=" col card text-white bg-secondary mb-3 me-3 ">
+        <div class="card-header">Русский</div>
+        <div class="card-body">
+          <h5 class="card-title">Разработка программного обеспечения для определения координат точки наблюдения или цели</h5>
+          <p class="card-text">Разработка программного обеспечения для определения координат точки наблюдения или цели включает в себя ряд этапов, в том числе:
+
+            Определение требований. Первым шагом является определение требований к программному обеспечению, таких как тип проводимых наблюдений, требуемая точность и используемые инструменты или оборудование.
+            
+            Выбор подходящего алгоритма: После установления требований можно выбрать подходящий алгоритм для определения координат. Это может включать использование триангуляции, трилатерации или других методов в зависимости от специфики наблюдения.
+            
+            Реализация алгоритма: затем выбранный алгоритм реализуется в программном обеспечении, обычно с использованием языка программирования, такого как Python, C++ или MATLAB.
+            
+            Включение ввода и вывода данных: программное обеспечение также должно включать функции ввода и вывода, чтобы пользователи могли вводить соответствующие данные и получать рассчитанные координаты.
+            
+            Тестирование и проверка. Затем программное обеспечение тестируется и проверяется, чтобы убедиться, что оно дает точные результаты и соответствует требованиям, определенным на шаге 1.
+            
+            Итеративная разработка: в зависимости от результатов тестирования и отзывов пользователей программное обеспечение может быть доработано и обновлено с помощью итеративных циклов разработки.
+            
+            В целом, разработка программного обеспечения для определения координат точки наблюдения требует глубокого понимания задействованных математических и алгоритмических принципов, а также навыков программирования и разработки программного обеспечения.</p>
+        </div>
+      </div>
+      <div class=" col card text-white bg-success mb-3  ">
+        <div class="card-header">English</div>
+        <div class="card-body">
+          <h5 class="card-title">The development of software for determining the coordinates of an observation point or target</h5>
+          <p class="card-text">The development of software for determining the coordinates of an observation point or target involves a number of steps, including:
+
+            Defining the requirements: The first step is to determine the requirements for the software, such as the type of observation being made, the accuracy required, and the instruments or equipment being used.
+            
+            Selecting the appropriate algorithm: Once the requirements are established, the appropriate algorithm for determining the coordinates can be selected. This may involve using triangulation, trilateration, or other techniques depending on the specifics of the observation.
+            
+            Implementing the algorithm: The selected algorithm is then implemented in software, typically using a programming language such as Python, C++, or MATLAB.
+            
+            Incorporating data input and output: The software must also incorporate input and output functions to allow users to enter relevant data and receive the calculated coordinates.
+            
+            Testing and validation: The software is then tested and validated to ensure that it produces accurate results and meets the requirements defined in step 1.
+            
+            Iterative development: Depending on the results of testing and feedback from users, the software may be further refined and updated through iterative development cycles.
+            
+            Overall, developing software for determining the coordinates of an observation point requires a solid understanding of the mathematical and algorithmic principles involved, as well as proficiency in programming and software development.</p>
+        </div>
+      </div>
+      <a href="{% url 'home' %}" class="btn btn-primary d-right" width="18rem" >Ortga</a>
+</div>
+ 
+{% endblock content %}
