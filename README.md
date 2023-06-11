@@ -6,16 +6,37 @@ pip bilan o'rnatilgan packagelar # bilan belgilangan
  
  ### Homepage
  
- ![Homepage](https://user-images.githubusercontent.com/99737165/232584832-9011e82d-0d51-41f4-be2c-8a572129bd9c.png)
+ ![image](https://github.com/0101mirabror/Math/assets/99737165/ddf7b13a-45a8-4cdd-9b77-97a8d57dcdde)
 
 ### Koordinatalarni kiritish uchun forma, koordinatalar avtomatik tarzda natijani hisoblaydi va  databasega userga bog'laydi
 
-![Koordinatarni kiritish uchun forma](https://user-images.githubusercontent.com/99737165/232585086-21446923-a134-42d2-8462-9089aab455fc.png)
+![image](https://github.com/0101mirabror/Math/assets/99737165/1fdf2a20-12a9-44c9-9813-fc817b518095)
+![image](https://github.com/0101mirabror/Math/assets/99737165/6e8105c4-0200-4dbb-b81a-0294bba7cbbf)
 
 ### Koordinatalar kiritilgandan keyin chiqarilgan natija
 
-![Hisoblangan natija](https://user-images.githubusercontent.com/99737165/232585222-04b406e1-8435-45e9-94ae-1a5dae73feae.png)
+![image](https://github.com/0101mirabror/Math/assets/99737165/c73d9443-1154-4e8f-af89-0e671abf9a16)
+
+### Koordinatalarni hisoblashda hosil bo'lishi mumkin bo'lgan xatolikni hisoblash
+![image](https://github.com/0101mirabror/Math/assets/99737165/0e3882f1-9b4f-477f-8d89-3ce12e0643d0)
+![image](https://github.com/0101mirabror/Math/assets/99737165/b2817e2e-eceb-4cbe-8fe9-cf1363d75ffa)
+
+### Sayt uchun about sahifasi
+![image](https://github.com/0101mirabror/Math/assets/99737165/af1790a0-6c8d-4dc2-be38-1414ba099659)
+
+### 3ta va 4ta koordinata bilan hisoblash
+4 ta koordinatalar va masofalar bo'lganida
+![image](https://github.com/0101mirabror/Math/assets/99737165/8108fa31-8fc3-4f37-bc9e-c53398feb6ca)
+3 ta koordinatalar va masofalar bo'lgan holda
+![image](https://github.com/0101mirabror/Math/assets/99737165/035742d8-daee-48ff-8aa4-203705cead01)
+ularning farqi
+![image](https://github.com/0101mirabror/Math/assets/99737165/f22e4935-e8f9-4faf-be47-f631f8acc6b3)
+
+
 
 ### Userga tegishli hisoblash tarixi, aynan bir user uchun
+![image](https://github.com/0101mirabror/Math/assets/99737165/7faaf548-f8b9-40ab-a295-bdddafd69503)
 
-![Userga tegishli hisoblashlar tarixi](https://user-images.githubusercontent.com/99737165/232585328-99569fc0-a53b-4fcc-ae64-8a0906c9d249.png)
+### Hisoblangan koordinatalarni grafikda ko'rinishi
+![image](https://github.com/0101mirabror/Math/assets/99737165/8ccdbf5f-834f-4cf6-9c59-27f4b427308e)
+
