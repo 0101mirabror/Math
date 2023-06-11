@@ -16,9 +16,9 @@ pip bilan o'rnatilgan packagelar # bilan belgilangan
 ### Koordinatalar kiritilgandan keyin chiqarilgan natija
 
 ![image](https://github.com/0101mirabror/Math/assets/99737165/c73d9443-1154-4e8f-af89-0e671abf9a16)
-
-### Koordinatalarni hisoblashda hosil bo'lishi mumkin bo'lgan xatolikni hisoblash
 ![image](https://github.com/0101mirabror/Math/assets/99737165/0e3882f1-9b4f-477f-8d89-3ce12e0643d0)
+### Koordinatalarni hisoblashda hosil bo'lishi mumkin bo'lgan xatolikni hisoblash
+
 ![image](https://github.com/0101mirabror/Math/assets/99737165/b2817e2e-eceb-4cbe-8fe9-cf1363d75ffa)
 
 ### Sayt uchun about sahifasi
