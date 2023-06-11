@@ -1,0 +1,203 @@
+{% extends 'base.html'%}
+{% load latexify %}
+{% load mathfilters %}
+{% load i18n %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 koordinatalarni hisoblash</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% include 'latexify/stylesheets.html' %}
+    
+<style>
+  .txt {
+    font-family: 'Dongle', sans-serif;
+    font-size:25px;
+  }
+  .txt-header {
+    font-family: 'Dongle', sans-serif;
+    font-size:35px;
+    font-weight:bold;
+  }
+  </style>
+</head>
+<body>
+
+
+
+
+<div class="card shadow mb-2 ms-1 me-1" style="background-color:f7f4ed; color:#212b2d; ">
+    <div class="card-body txt">
+      {% latexify 'Berilgan koordinatalar: K1(x1, y1, z1), K2(x2, y2, z2), K3(x3,y3,z3), K4(x4,y4,z4) Masofalar(R1, R2, R3, R4)' %}
+    
+      <table class="txt">
+        <tr>
+          <th>OX</th>
+          <th>OY</th>
+          <th>OZ</th>
+          <th>R</th>
+          <th>R_kv</th>
+        </tr>
+        <tr>
+          <td style="width:18rem;"><b>x1:</b> {{d.x1}}</td>
+          <td style="width:18rem;"><b>y1:</b> {{d.y1}}</td>
+          <td style="width:18rem;"><b>z1:</b> {{d.z1}}</td>
+          <td style="width:18rem;"><b>r1:</b> {{d.r1}}</td>
+          <td style="width:18rem;"><b>R_kv1 = </b> {{d.rkv1}}</td>
+        </tr>
+        <tr>
+            <td style="width:18rem;"><b>x2:</b> {{d.x2}}</td>
+            <td style="width:18rem;"><b>y2:</b> {{d.y2}}</td>
+            <td style="width:18rem;"><b>z2:</b> {{d.z2}}</td>
+            <td style="width:18rem;"><b>r2:</b> {{d.r2}}</td>
+            <td style="width:18rem;"><b>R_kv2 =</b> {{d.rkv2}}</td>
+        </tr>
+        <tr>
+            <td style="width:18rem;"><b>x3:</b> {{d.x3}}</td>
+            <td style="width:18rem;"><b>y3:</b> {{d.y3}}</td>
+            <td style="width:18rem;"><b>z3:</b> {{d.z3}}</td>
+            <td style="width:18rem;"><b>r3:</b> {{d.r3}}</td>
+            <td style="width:18rem;"><b>R_kv3 = </b> {{d.rkv3}}</td>
+        </tr>
+        <tr>
+            <td style="width:18rem;"><b>x4:</b> {{d.x4}}</td>
+            <td style="width:18rem;"><b>y4:</b> {{d.y4}}</td>
+            <td style="width:18rem;"><b>z4:</b> {{d.z4}}</td>
+            <td style="width:18rem;"><b>r4:</b> {{d.r4}}</td>
+            <td style="width:18rem;"><b>R_kv4 = </b> {{d.rkv4}}</td>
+        </tr>
+      </table>
+      $$ (x^2-{{d.x1}}^2) + (y^2-{{d.y1}}^2) +(z^2-{{d.z1}}^2) = {{d.rkv1}} $$
+      $$ (x^2-{{d.x2}}^2) + (y^2-{{d.y2}}^2) +(z^2-{{d.z2}}^2) = {{d.rkv2}} $$
+      $$ (x^2-{{d.x3}}^2) + (y^2-{{d.y3}}^2) +(z^2-{{d.z3}}^2) = {{d.rkv3}} $$
+      $$ (x^2-{{d.x4}}^2) + (y^2-{{d.y4}}^2) +(z^2-{{d.z4}}^2) = {{d.rkv4}} $$
+    </div>
+</div>
+<div class="ms-1 me-1 card shadow mb-2 " style="background-color:f7f4ed; color:#212b2d; ">
+  
+    <div class="card-body txt">
+      {% latexify "Tenglamalarni o'zaro ayiramiz" %}
+      <p class="text-center">(2 -> 1)</p>
+      $$ 2x*({{d.x1}}-{{d.x2}}) + 2y*({{d.y1}}-{{d.y2}}) +2z*({{d.z1}}-{{d.z2}}) = {{d.rkv2}}-{{d.rkv1}} + ({{d.x1}}^2-{{d.x2}}^2)+({{d.y1}}^2-{{d.y2}}^2)+({{d.z1}}^2-{{d.z2}}^2)  $$
+      <p class="text-center">(3 -> 1)</p>
+      $$ 2x*({{d.x1}}-{{d.x3}}) + 2y*({{d.y1}}-{{d.y3}}) +2z*({{d.z1}}-{{d.z3}}) = {{d.rkv3}}-{{d.rkv1}} + ({{d.x1}}^2-{{d.x3}}^2)+({{d.y1}}^2-{{d.y3}}^2)+({{d.z1}}^2-{{d.z3}}^2)  $$
+      <p class="text-center">(4 -> 1)</p>
+      $$ 2x*({{d.x1}}-{{d.x4}}) + 2y*({{d.y1}}-{{d.y4}}) +2z*({{d.z1}}-{{d.z4}}) = {{d.rkv4}}-{{d.rkv1}} + ({{d.x1}}^2-{{d.x4}}^2)+({{d.y1}}^2-{{d.y4}}^2)+({{d.z1}}^2-{{d.z4}}^2)  $$
+      <p class="text-center pt-3">Koeffitsientlarga almashtirish kiritamiz </p>
+      <div class="row">
+        <div class="col">
+        $$ 2*({{d.x1}}-{{d.x2}}) = a11 = {{ls_ins.0}} $$
+        $$ 2*({{d.y1}}-{{d.y2}}) = a12 = {{ls_ins.1}} $$
+        $$ 2*({{d.z1}}-{{d.z2}}) = a13 = {{ls_ins.2}} $$
+        </div>
+        <div class="col">
+          $$ 2*({{d.x1}}-{{d.x3}}) = a21 ={{ls_ins.4}}$$ 
+          $$ 2*({{d.y1}}-{{d.y3}}) = a22 ={{ls_ins.5}}$$
+          $$ 2*({{d.z1}}-{{d.z3}}) = a23 ={{ls_ins.6}}$$
+        </div>
+        <div class="col">
+          $$ 2*({{d.x1}}-{{d.x4}}) = a31 ={{ls_ins.8}}$$ 
+          $$ 2*({{d.y1}}-{{d.y4}}) = a32 ={{ls_ins.9}}$$
+          $$ 2*({{d.z1}}-{{d.z4}}) = a33 ={{ls_ins.10}}$$
+        </div>
+        
+        <div class="col">
+        $$ {{d.rkv2}}-{{d.rkv1}} + ({{d.x1}}^2-{{d.x2}}^2)+({{d.y1}}^2-{{d.y2}}^2)+({{d.z1}}^2-{{d.z2}}^2) = d1 = {{ls_ins.3}}.$$ 
+        $$ {{d.rkv3}}-{{d.rkv1}} + ({{d.x1}}^2-{{d.x3}}^2)+({{d.y1}}^2-{{d.y3}}^2)+({{d.z1}}^2-{{d.z3}}^2) = d2 = {{ls_ins.7}}$$
+        $$ {{d.rkv4}}-{{d.rkv1}} + ({{d.x1}}^2-{{d.x4}}^2)+({{d.y1}}^2-{{d.y4}}^2)+({{d.z1}}^2-{{d.z4}}^2) = d3 = {{ls_ins.11}}$$
+        </div>
+      </div>
+    </div>
+</div>   
+<div class=" ms-1 me-1 card shadow mb-2" style="background-color:f7f4ed; color:#212b2d; ">
+  
+    <div class="card-body txt">
+      {% latexify "K qiymati topiladi" %}
+       <div class="row">
+      <div class="col">
+        $$ b11=({{ls_ins.5}}*{{ls_ins.0}})-  ({{ls_ins.1}}*{{ls_ins.4}}) = {{ls_ins.12}} $$
+        $$ b12=({{ls_ins.6}}*{{ls_ins.0}})-  ({{ls_ins.4}}*{{ls_ins.2}}) = {{ls_ins.13}} $$
+        $$ b21=({{ls_ins.9}}*{{ls_ins.0}})-  ({{ls_ins.8}}*{{ls_ins.1}}) = {{ls_ins.14}} $$
+        $$ b22=({{ls_ins.10}}*{{ls_ins.0}}) - ({{ls_ins.8}}*{{ls_ins.2}}) = {{ls_ins.15}} $$
+      </div>
+      <div class="col">
+        $$ k1=({{ls_ins.7 }}*{{ls_ins.0}}) - ( {{ls_ins.3}}*{{ls_ins.4}}) = {{ls_ins.16}} $$
+        $$ k2=({{ls_ins.11}}*{{ls_ins.0}}) - ({{ls_ins.3}}*{{ls_ins.8}} )= {{ls_ins.17}} $$
+       </div>
+    </div>
+    </div>
+</div>   
+</div>
+</div>
+</div>
+<div class="ms-1 me-1">
+  <div class="card  p-3" style="background-color:f7f4ed; color:#212b2d;">
+    <div class="row">
+        <div class="col">
+            <p class="text"><b>a11=</b>{{ls_ins.0}}</p>
+            <p class="text"><b>a12=</b>{{ls_ins.1}}</p>
+            <p class="text"><b>a13=</b>{{ls_ins.2}}</p>
+            <p class="text"><b>d1=</b>{{ls_ins.3}}</p>
+        </div>
+        <div class="col">
+            <p class="text"><b>a21=</b>{{ls_ins.4}}</p>
+            <p class="text"><b>a22=</b>{{ls_ins.5}}</p>
+            <p class="text"><b>a23=</b>{{ls_ins.6}}</p>
+            <p class="text"><b>d2=</b>{{ls_ins.7}}</p>
+        </div>
+        <div class="col">
+            <p class="text"><b>a31=</b>{{ls_ins.8}}</p>
+            <p class="text"><b>a32=</b>{{ls_ins.9}}</p>
+            <p class="text"><b>a33=</b>{{ls_ins.10}}</p>
+            <p class="text"><b>d3=</b>{{ls_ins.11}}</p>
+        </div>
+        <div class="col">
+            <p class="text"><b>b11=</b>{{ls_ins.12}}</p>
+            <p class="text"><b>b12=</b>{{ls_ins.13}}</p>
+            <p class="text"><b>b21=</b>{{ls_ins.14}}</p>
+            <p class="text"><b>b22=</b>{{ls_ins.15}}</p>
+        </div>
+        <div class="col">
+            <p class="text"><b>k1=</b>{{ls_ins.16}}</p>
+            <p class="text"><b>k2=</b>{{ls_ins.17}}</p>
+         </div>
+      </div>
+  </div>
+  
+  
+  <div class="card  mt-2" style="background-color:f7f4ed; color:#212b2d; ">
+    <div class="card-body   font-weight-bold"><p></br> N({{root.0}}, {{root.1}}, {{root.2}})</p>
+    <p><b>x = </b>{{root.0}}</p>
+    <p><b>y = </b>{{root.1}}</p>
+    <p><b>z = </b>{{root.2}}</p>
+    <p class="text-white txt"></p>
+    </div>
+    <button  class="btn  border-1 rounded">  Koordinatalarning 3 o'lchamli fazoda joylashuvi   </button>
+    <div class="card m-2 p-5">
+      {% autoescape off %}
+      {{ div }}
+      {% endautoescape %}
+     </div>  
+     <div class="row">
+      <div class="col">
+      </div>
+      <div class="col p-3">
+        <a href="{% url 'home'%}" class="white float-end"  >
+            <span class="fas fa-stack fa-2x float-right">
+                <i class="fa fa-solid fa-square fa-stack-2x"></i>
+                <i class="fa fa-solid fa-arrow-left text-white fa-stack-1x  fa-xs"></i>
+            </span>
+        </a>
+    </div>
+   </div>
+ </div>
+{% include "latexify/scripts.html" %}
+ 
+</body>
+</html>
+{% endblock content %}  

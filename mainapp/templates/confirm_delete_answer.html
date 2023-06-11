@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <form method="post">
+     {% csrf_token %}
+     <div class="card shadow text-center mt-5">
+     <p style="font-family: 'Dongle', sans-serif;font-size:25px;"> Are you sure delete <b> {{ object }}</b>?</p>
+     <input class="btn btn-danger"  type="submit" value="Confirm">
+     </div>
+    </form>
+</div>
+{% endblock content %}

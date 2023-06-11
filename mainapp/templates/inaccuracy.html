@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% load i18n %}
+{%  block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xatolikni aniqlovchi sahifa</title>
+    <script src="https://kit.fontawesome.com/0dcd8d422c.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% include 'latexify/stylesheets.html' %}
+    
+<style>
+  .txt {
+    font-family: 'Dongle', sans-serif;
+    font-size:25px;
+  }
+  .txt-header {
+    font-family: 'Dongle', sans-serif;
+    font-size:35px;
+    font-weight:bold;
+  }
+  .bgd {
+    background: #f7f4ed;
+  }
+  </style>
+</head>
+<body>
+<div class="  mt-2">
+    <div class="card bg-primary card-body shadow">
+        <div class="row">
+            <div class="col">
+                <h1 class="txt-header text-white">Xatolikni aniqlash</h1>
+            </div>
+            <div class="col">
+                <a href="{% url 'home'%}" class="white float-end">
+                    <span class="fas fa-stack fa-2x float-right">
+                        <i class="fa fa-solid fa-square fa-stack-2x"></i>
+                        <i class="fa fa-solid fa-arrow-left text-white fa-stack-1x  fa-xs"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="  mt-2">
+    <div class="card bgd p-3 shadow">
+      <div class="row">
+          <div class="col">
+              <p class="text"><b>a11=</b>{{ls_ins.0}}</p>
+              <p class="text"><b>a12=</b>{{ls_ins.1}}</p>
+              <p class="text"><b>a13=</b>{{ls_ins.2}}</p>
+              <p class="text"><b>d1=</b>{{ls_ins.3}}</p>
+          </div>
+          <div class="col">
+              <p class="text"><b>a21=</b>{{ls_ins.4}}</p>
+              <p class="text"><b>a22=</b>{{ls_ins.5}}</p>
+              <p class="text"><b>a23=</b>{{ls_ins.6}}</p>
+              <p class="text"><b>d2=</b>{{ls_ins.7}}</p>
+          </div>
+          <div class="col">
+              <p class="text"><b>a31=</b>{{ls_ins.8}}</p>
+              <p class="text"><b>a32=</b>{{ls_ins.9}}</p>
+              <p class="text"><b>a33=</b>{{ls_ins.10}}</p>
+              <p class="text"><b>d3=</b>{{ls_ins.11}}</p>
+          </div>
+          
+        </div>
+    </div>
+</div>
+<div class="  mt-2">
+    <div class="card bgd p-3 text shadow">
+        <div class="row">
+            <div class="col">
+                $$\color{navy} ({{ls_ins.0 |mul:2 }})*x + ({{ls_ins.1 |mul:2 }})*y +({{ls_ins.2 |mul:2 }})*z = {{ls_ins.3}} $$
+                $$\color{navy} ({{ls_ins.4 |mul:2 }})*x + ({{ls_ins.5 |mul:2 }})*y +({{ls_ins.6 |mul:2 }})*z = {{ls_ins.7}}  $$
+                $$\color{navy} ({{ls_ins.8 |mul:2 }})*x + ({{ls_ins.9 |mul:2 }})*y +({{ls_ins.10 |mul:2 }})*z = {{ls_ins.11}}  $$
+            </div>
+            <div class="col">
+                $$ \left(\begin{array}{c}\triangle d1\\ \triangle d2 \\ \triangle d3 \end{array}\right) = \left(\begin{array}{c}  {{ls_ins.18}}\\   {{ls_ins.19}} \\   {{ls_ins.20}} \end{array}\right)     $$
+            </div>
+            
+        </div>
+        </div> 
+</div>
+<div class="  mt-2">
+    <div class="card bgd p-3 text shadow">
+        <div class="row">
+            <div class="col">
+                $$ \bf A = \begin{bmatrix}a11 & a12 & a13 \\ a21 & a22 & a23 \\ a31 & a32 & a33 \end{bmatrix} = \begin{bmatrix}{{ls_ins.0 |mul:2}} & {{ls_ins.1|mul:2}} & {{ls_ins.2|mul:2}} \\ {{ls_ins.4|mul:2}} & {{ls_ins.5|mul:2}} & {{ls_ins.6|mul:2}} \\ {{ls_ins.8|mul:2}} & {{ls_ins.9|mul:2}} & {{ls_ins.10 |mul:2}} \end{bmatrix} $$
+            </div>
+            <div class="col">
+                 $$\color{navy} {\bf det(A)}  = (a11*a22*a33 + a13*a21*a32 + a12*a23*a31) - (a13*a22*a31+a11*a23*a32+a12*a21*a33)$$
+                $$\color{navy} {\bf det(A)} = (( {{ls_ins.0|mul:2}})*({{ls_ins.5|mul:2}})*({{ls_ins.10|mul:2}}) + ( {{ls_ins.2|mul:2}})*({{ls_ins.4|mul:2}})*({{ls_ins.9|mul:2}}) +  ({{ls_ins.1|mul:2}})*({{ls_ins.6|mul:2}})*({{ls_ins.8|mul:2}})) - (({{ls_ins.2|mul:2}})*({{ls_ins.5|mul:2}})*({{ls_ins.8|mul:2}}) +  ({{ls_ins.0|mul:2}})*({{ls_ins.6|mul:2}})*({{ls_ins.9|mul:2}}) +  ({{ls_ins.1|mul:2}})*({{ls_ins.4|mul:2}})*({{ls_ins.10|mul:2}})) =\color{green} {{da}}$$
+            </div>        
+        </div>
+    </div> 
+</div>
+<div class="  mt-2">
+    <div class="card bgd p-3 text shadow">
+        <div class="row">
+            <h5 class="txt-header">Algebraik to'ldiruvchilar topilishi kerak</h5>
+            <div class="col">
+                $$\color{olive} \bf A11 = \begin{bmatrix} a22 & a23  \\ a32 & a33\end{bmatrix} = \begin{bmatrix}{{ls_ins.5 |mul:2}} & {{ls_ins.6|mul:2}}  \\ {{ls_ins.9|mul:2}} & {{ls_ins.10|mul:2}} \end{bmatrix} = {{comp.0}}$$
+            </div>
+            <div class="col">
+                $$\color{olive} \bf A12 = -\begin{bmatrix} a21 & a23  \\ a31 & a33\end{bmatrix} = -\begin{bmatrix}{{ls_ins.4 |mul:2}} & {{ls_ins.6|mul:2}}   \\ {{ls_ins.8|mul:2}} & {{ls_ins.10|mul:2}}  \end{bmatrix} = {{comp.1}} $$
+            </div>
+            <div class="col">
+                $$\color{olive} \bf A13 = \begin{bmatrix} a21 & a22  \\ a31 & a32\end{bmatrix} = \begin{bmatrix}{{ls_ins.4 |mul:2}} & {{ls_ins.5|mul:2}}   \\ {{ls_ins.8|mul:2}} & {{ls_ins.9|mul:2}}  \end{bmatrix} = {{comp.2}}$$
+            </div>
+        </div>
+        <div class="row">
+             
+            <div class="col">
+                $$\color{navy}  \bf A21 = -\begin{bmatrix} a12 & a13  \\ a32 & a33\end{bmatrix} = -\begin{bmatrix}{{ls_ins.1 |mul:2}} & {{ls_ins.2|mul:2}}  \\ {{ls_ins.9|mul:2}} & {{ls_ins.10|mul:2}}    \end{bmatrix} = {{comp.3}}$$
+            </div>
+            <div class="col">
+                $$\color{navy} \bf A22 = \begin{bmatrix} a11 & a13  \\ a31 & a33\end{bmatrix} = \begin{bmatrix}{{ls_ins.0|mul:2}} & {{ls_ins.2|mul:2}}   \\ {{ls_ins.8|mul:2}} & {{ls_ins.10|mul:2}}   \end{bmatrix} = {{comp.4}}$$
+            </div>
+            <div class="col">
+                $$\color{navy} \bf A23 = -\begin{bmatrix} a11 & a12  \\ a31 & a32\end{bmatrix} = -\begin{bmatrix}{{ls_ins.0 |mul:2}} & {{ls_ins.1|mul:2}}   \\ {{ls_ins.8|mul:2}} & {{ls_ins.9|mul:2}}   \end{bmatrix} = {{comp.5}}$$
+            </div>
+        </div>
+        <div class="row">
+             
+            <div class="col">
+                $$\color{green} \bf A31 = \begin{bmatrix} a12 & a13  \\ a22 & a23\end{bmatrix} = \begin{bmatrix}{{ls_ins.1 |mul:2}} & {{ls_ins.2|mul:2}}   \\ {{ls_ins.5|mul:2}} & {{ls_ins.6|mul:2}}      \end{bmatrix} = {{comp.6}}$$
+            </div>
+            <div class="col">
+                $$\color{green}  \bf A32 = -\begin{bmatrix} a11 & a13  \\ a21 & a23\end{bmatrix} = -\begin{bmatrix}{{ls_ins.0 |mul:2}} & {{ls_ins.2|mul:2}}   \\ {{ls_ins.4|mul:2}} & {{ls_ins.6|mul:2}}      \end{bmatrix} = {{comp.7}}$$
+            </div>
+            <div class="col">
+                $$\color{green}  \bf A33 = \begin{bmatrix} a11 & a12  \\ a21 & a22\end{bmatrix} = \begin{bmatrix}{{ls_ins.0 |mul:2}} & {{ls_ins.1|mul:2}}  \\ {{ls_ins.4|mul:2}} & {{ls_ins.5|mul:2}}       \end{bmatrix} = {{comp.8}}$$
+            </div>
+        </div>
+                 
+        </div>
+    </div> 
+</div>
+<div class="card shadow mt-2 mb-2 bgd">
+    <div class="card-body">
+        <h5 class="txt-header">Xatolikni hisoblash</h5>
+        <p>$$ \bf A^{-1} = \frac{1}{det(A)}*\begin{bmatrix}A11 &  A21&   A31\\ A12 & A13 & A33\\ A13 & A23 & A33 \end{bmatrix}*\left(\begin{array}{c}\triangle d1\\ \triangle d2 \\ \triangle d3 \end{array}\right) = \frac{1}{({{da}})}*\begin{bmatrix}{{comp.0}} &  {{comp.3}} &   {{comp.6}} \\ {{comp.1}} & {{comp.4}} & {{comp.7}} \\ {{comp.2}} & {{comp.5}} & {{comp.8}} \end{bmatrix}*\left(\begin{array}{c}  {{ls_ins.18}}\\   {{ls_ins.19}} \\   {{ls_ins.20}} \end{array}\right)  $$</p>
+        <p>$$ \bf A^{-1} = \frac{1}{({{da}})}*\begin{bmatrix}{{comp.0}}*{{ls_ins.18}} +  {{comp.3}}*{{ls_ins.19}} +    {{comp.6}}*{{ls_ins.20}} \\{{comp.1}}*{{ls_ins.18}} +  {{comp.4}}*{{ls_ins.19}} +    {{comp.7}}*{{ls_ins.20}}\\ {{comp.2}}*{{ls_ins.18}} +  {{comp.5}}*{{ls_ins.19}} +    {{comp.8}}*{{ls_ins.20}}  \end{bmatrix}=  \frac{1}{({{da}})}*\left(\begin{array}{c}  {{err.0}}\\   {{err.1}} \\   {{err.2}} \end{array}\right) =  \begin{bmatrix}{{err.3}} \\ {{err.4}} \\ {{err.5}}\end{bmatrix} $$</p>
+    </div>
+</div>
+</body>
+{% endblock content %}

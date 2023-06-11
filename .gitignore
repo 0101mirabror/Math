@@ -1,2 +1,3 @@
 virt/
-secure_data.py/
+**/migrations
+/securedata/

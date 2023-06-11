@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load latexify %}
+{% load mathfilters %}
+{% load i18n %}
+
+{% block content %}
+<style>
+  .bgd-2 {
+    background: #e5f6df;
+  }
+</style>
+<div class=" ">
+<div class="container">
+    <div class="card shadow mb-2" style="background-color:f7f4ed; color:#212b2d; ">
+        <div class="card-body txt">
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="card  bgd-2  border-0">
+                    <div class="card-body">
+                       <div class="col border-left">
+                         <p class="text-center " style="font-family: 'Dongle', sans-serif; font-size:30px; font-weight:bold;">4 Koordinata<p/>
+                         <div class="card p-2">
+                         <p> <b>x(rkv) =</b> {{ans4.0}}</p>
+                         <p> <b>y(rkv) =</b> {{ans4.1}}</p>
+                         <p> <b>z(rkv) =</b> {{ans4.2}}</p>
+                         </div></hr class="primary">
+                    </div>
+                      <a href="{% url 'coor4'%}" class="btn   mt-3" style="background-color:f7f4ed; color:#212b2d; ">Tekshirish</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card bgd-2">
+                    <div class="card-body">
+                        <p class="text-center" style="font-family: 'Dongle', sans-serif; font-size:30px; font-weight:bold;">3 Koordinata</p>
+                        <div class="card p-2">
+                        <p><b>x1(rkv) = </b>{{ans3.0}}</p>
+                        <p><b>y1(rkv) = </b>{{ans3.1}}</p>
+                        <p><b>z1(rkv) = </b>{{ans3.2}}</p>
+                        <p><b>x2(rkv) = </b>{{ans3.3}}</p>
+                        <p><b>y2(rkv) = </b>{{ans3.4}}</p>
+                        <p><b>z2(rkv) = </b>{{ans3.5}}</p>
+                        </div>
+                    </hr>
+                      <a href="{% url 'coor3' %}" class="btn   mt-3" style="background-color:f7f4ed; color:#212b2d; ">Tekshirish</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

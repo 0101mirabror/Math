@@ -1,18 +1,45 @@
 {% extends 'base.html' %}
 {% load mathfilters %}                                                                                          
 {% block content %}
+<html>
+<head>
+  <title> Hisoblashlar tarixi </title>
+</head>
+
+<style>
+  .txt {
+    font-family: 'Dongle', sans-serif;
+    font-size:25px;
+  }
+  .txt-header {
+    font-family: 'Dongle', sans-serif;
+    font-size:35px;
+    font-weight:bold;
+  }
+</style>
+<body>
 <div class="container">
   
     <div class="card shadow bg-primary text-white mb-2">
-        <div class="card-body ">
-          <h1>Mathematical Solving Way</h1>
-          <h5>Matematik ishlanish usuli</h5>
-          <img   src="{{img.image.url}}"  height="500" width="400">           
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h1 class="txt-header">Mathematical Solving Way</h1>
+            </div>
+            <div class="col">
+              <a href="{% url 'home'%}" class="white float-end">
+                  <span class="fas fa-stack fa-2x float-right">
+                      <i class="fa fa-solid fa-square fa-stack-2x"></i>
+                      <i class="fa fa-solid fa-arrow-left text-white fa-stack-1x  fa-xs"></i>
+                  </span>
+              </a>
+            </div>
+          </div> 
         </div>
-      </div>
+    </div>
 
     <div class="card">
-    {% for dat in data %}
+    {% for l in ls %}
     <div class="card shadow mb-2">
         <div class="card-body">
           
@@ -24,34 +51,59 @@
               <th>R</th>
             </tr>
             <tr>
-              <td style="width:18rem;"><b>x1:</b> {{dat.x1}}</td>
-              <td style="width:18rem;"><b>x1:</b> {{dat.y1}}</td>
-              <td style="width:18rem;"><b>z1:</b> {{dat.z1}}</td>
-              <td style="width:18rem;"><b>r1:</b> {{dat.r1}}</td>
+              <td style="width:18rem;"><b>x1:</b> {{l.0.x1}}</td>
+              <td style="width:18rem;"><b>y1:</b> {{l.0.y1}}</td>
+              <td style="width:18rem;"><b>z1:</b> {{l.0.z1}}</td>
+              <td style="width:18rem;"><b>r1:</b> {{l.0.r1}}</td>
             </tr>
             <tr>
-                <td style="width:18rem;"><b>x2:</b> {{dat.x2}}</td>
-                <td style="width:18rem;"><b>y2:</b> {{dat.y2}}</td>
-                <td style="width:18rem;"><b>z2:</b> {{dat.z2}}</td>
-                <td style="width:18rem;"><b>r2:</b> {{dat.r2}}</td>
+                <td style="width:18rem;"><b>x2:</b> {{l.0.x2}}</td>
+                <td style="width:18rem;"><b>y2:</b> {{l.0.y2}}</td>
+                <td style="width:18rem;"><b>z2:</b> {{l.0.z2}}</td>
+                <td style="width:18rem;"><b>r2:</b> {{l.0.r2}}</td>
             </tr>
             <tr>
-                <td style="width:18rem;"><b>x3:</b> {{dat.x3}}</td>
-                <td style="width:18rem;"><b>y3:</b> {{dat.y3}}</td>
-                <td style="width:18rem;"><b>z3:</b> {{dat.z3}}</td>
-                <td style="width:18rem;"><b>r3:</b> {{dat.r3}}</td>
+                <td style="width:18rem;"><b>x3:</b> {{l.0.x3}}</td>
+                <td style="width:18rem;"><b>y3:</b> {{l.0.y3}}</td>
+                <td style="width:18rem;"><b>z3:</b> {{l.0.z3}}</td>
+                <td style="width:18rem;"><b>r3:</b> {{l.0.r3}}</td>
             </tr>
-          </table>
-                <p>
-                    {{ dat.x1 }}
-                </p>
+            <tr>
+                <td style="width:18rem;"><b>x4:</b> {{l.0.x4}}</td>
+                <td style="width:18rem;"><b>y4:</b> {{l.0.y4}}</td>
+                <td style="width:18rem;"><b>z4:</b> {{l.0.z4}}</td>
+                <td style="width:18rem;"><b>r4:</b> {{l.0.r4}}</td>
+            </tr>
+          </table>  
+          <!-- qiymatlar-->         
+          <div class="card    mt-4 " style="background-color:#f7f4ed;" >
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h2 class="txt"> Koordinatalar</h2>
+                  <p class="txt">K1({{l.0.x1}},  {{l.0.y1}}, {{l.0.z1}}),K2({{l.0.x2}},  {{l.0.y2}},  {{l.0.z2}}), K3({{l.0.x3}}, {{l.0.y3}},  {{l.0.z3}}), K4({{l.0.x4}},  {{l.0.y4}},  {{l.0.z4}})<p>
+                </div>
+                <div class="col">
+                  <p class="txt">Koeffitsientlar</p>                
+                  <p class="txt">{{l.2}}</p>
+                </div>
+              </div>
+              <p class="card-text"> </p>
+                    <p><b>x1 = </b>{{l.1.0}}</p>
+                    <p><b>y1 = </b>{{l.1.1}}</p>
+                    <p><b>z1 = </b>{{l.1.2}}</p>
+                    <p><b>x2 = </b>{{l.1.3}}</p>
+                    <p><b>y2 = </b>{{l.1.4}}</p>
+                    <p><b>z2 = </b>{{l.1.5}}</p>
+              <a href="{% url 'delete' l.0.id%}" class="btn alert alert-danger" role="alert" style="background-color:#ffffff;"> O'chirish</a>
+              
+            </div>
+          </div>
+
         </div>
     </div>
     {% endfor %} 
-    <a href="{% url 'home' %}" class="btn btn-primary d-right" width="18rem" >Ortga</a>
-  </div>
-
-
-
+   </div>
 </div>
+</body>
 {% endblock content %}
