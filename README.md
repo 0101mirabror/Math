@@ -29,7 +29,7 @@ pip bilan o'rnatilgan packagelar # bilan belgilangan
 ![image](https://github.com/0101mirabror/Math/assets/99737165/8108fa31-8fc3-4f37-bc9e-c53398feb6ca)
 3 ta koordinatalar va masofalar bo'lgan holda
 ![image](https://github.com/0101mirabror/Math/assets/99737165/035742d8-daee-48ff-8aa4-203705cead01)
-ularning farqi
+# ularning farqi
 ![image](https://github.com/0101mirabror/Math/assets/99737165/f22e4935-e8f9-4faf-be47-f631f8acc6b3)
 
 
